@@ -1,0 +1,31 @@
+export const metadata = { title: "시작하기 | Company Starter" };
+
+# 시작하기
+
+## 준비물
+
+- Node 22 (`.nvmrc`)
+- pnpm 9
+- Docker (로컬 PostgreSQL)
+
+## 설치와 실행
+
+```bash
+pnpm install
+cp .env.example .env
+pnpm db:up
+pnpm db:push
+pnpm dev
+```
+
+`pnpm dev`는 세 앱을 함께 띄웁니다.
+
+| 앱   | 주소                  | 용도               |
+| ---- | --------------------- | ------------------ |
+| web  | http://localhost:3000 | 공개 홈페이지      |
+| app  | http://localhost:3100 | 로그인 후 대시보드 |
+| docs | http://localhost:3200 | 이 문서 사이트     |
+
+## 환경변수
+
+환경변수는 저장소 루트의 `.env` 하나로 관리합니다. 각 앱은 시작할 때 `src/env.ts`의 스키마로 값을 검증하고, 빠진 값이 있으면 바로 실패합니다.

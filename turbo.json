@@ -1,0 +1,13 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env", ".env.local"],
+  "globalEnv": ["DATABASE_URL", "NEXT_PUBLIC_*", "SKIP_ENV_VALIDATION"],
+  "tasks": {
+    "build": { "dependsOn": ["^build"], "outputs": [".next/**", "!.next/cache/**", "dist/**"] },
+    "dev": { "cache": false, "persistent": true },
+    "lint": {},
+    "typecheck": { "dependsOn": ["^typecheck"] },
+    "test": {},
+    "e2e": { "cache": false }
+  }
+}

@@ -1,0 +1,41 @@
+export const metadata = { title: "구조 | Company Starter" };
+
+# 구조
+
+## 앱
+
+- `apps/web`: 공개 홈페이지
+- `apps/app`: 로그인 후 사용하는 대시보드
+- `apps/docs`: 문서 사이트 (MDX)
+
+## 공용 패키지
+
+- `@repo/db`: Drizzle ORM 스키마와 클라이언트. 서버 코드에서만 import합니다.
+- `@repo/env`: 환경변수 검증 (`@t3-oss/env-nextjs` + zod)
+- `@repo/ui`: shadcn/ui 기반 공용 컴포넌트와 디자인 토큰
+- `@repo/eslint-config`: 공용 ESLint 설정
+- `@repo/tsconfig`: 공용 TypeScript 설정
+
+## 환경변수 스키마 합성
+
+환경변수가 필요한 패키지는 `keys()`로 자신의 스키마를 내보내고, 각 앱의 `src/env.ts`가 `extends`로 합칩니다.
+
+```ts
+import { keys as db } from "@repo/db/keys";
+import { createEnv, z } from "@repo/env";
+
+export const env = createEnv({
+  extends: [db()],
+  client: { NEXT_PUBLIC_WEB_URL: z.url() },
+  runtimeEnv: { NEXT_PUBLIC_WEB_URL: process.env.NEXT_PUBLIC_WEB_URL },
+});
+```
+
+## UI 컴포넌트 추가
+
+`packages/ui`에서 shadcn CLI로 추가합니다.
+
+```bash
+cd packages/ui
+pnpm dlx shadcn@latest add dialog
+```
