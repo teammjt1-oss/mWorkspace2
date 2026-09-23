@@ -70,6 +70,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* 그림자 클래스의 뜻을 테마 그림자 축으로 바꾼다. 값은 theme/stylesheet.ts가 만든다. */
+  --shadow-2xs: var(--m-shadow-2xs);
+  --shadow-xs: var(--m-shadow-xs);
+  --shadow-sm: var(--m-shadow-sm);
+  --shadow-md: var(--m-shadow-md);
+  --shadow-lg: var(--m-shadow-lg);
+  --shadow-xl: var(--m-shadow-xl);
+  --shadow-2xl: var(--m-shadow-2xl);
 }
 
 @layer base {

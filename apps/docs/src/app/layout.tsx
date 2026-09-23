@@ -1,3 +1,4 @@
+import { ThemeHead } from "@repo/ui/components/theme-head";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { docs } from "@/lib/nav";
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <ThemeHead />
+      </head>
       <body className="min-h-screen">
         <div className="mx-auto flex max-w-5xl gap-10 px-4 py-10">
           <nav className="w-48 shrink-0">

@@ -1,3 +1,4 @@
+import { ThemeHead } from "@repo/ui/components/theme-head";
 import type { Metadata } from "next";
 import { env } from "@/env";
 import "./globals.css";
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <ThemeHead />
+      </head>
       <body className="min-h-screen">
         <header className="border-b">
           <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">

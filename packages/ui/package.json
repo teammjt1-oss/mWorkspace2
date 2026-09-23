@@ -6,7 +6,8 @@
   "exports": {
     "./globals.css": "./src/styles/globals.css",
     "./components/*": "./src/components/*.tsx",
-    "./lib/*": "./src/lib/*.ts"
+    "./lib/*": "./src/lib/*.ts",
+    "./theme/*": "./src/theme/*.ts"
   },
   "scripts": {
     "lint": "eslint .",
