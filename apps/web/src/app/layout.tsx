@@ -1,4 +1,5 @@
 import { ThemeHead } from "@repo/ui/components/theme-head";
+import { ThemePanel } from "@repo/ui/components/theme-panel";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,7 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <ThemeHead />
       </head>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        <ThemePanel />
+      </body>
     </html>
   );
 }

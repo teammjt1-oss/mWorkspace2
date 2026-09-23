@@ -1,4 +1,5 @@
 import { ThemeHead } from "@repo/ui/components/theme-head";
+import { ThemePanel } from "@repo/ui/components/theme-panel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { docs } from "@/lib/nav";
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
           <main className="min-w-0 flex-1">{children}</main>
         </div>
+        <ThemePanel />
       </body>
     </html>
   );

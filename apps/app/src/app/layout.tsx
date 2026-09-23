@@ -1,4 +1,5 @@
 import { ThemeHead } from "@repo/ui/components/theme-head";
+import { ThemePanel } from "@repo/ui/components/theme-panel";
 import type { Metadata } from "next";
 import { env } from "@/env";
 import "./globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         {children}
+        <ThemePanel />
       </body>
     </html>
   );
